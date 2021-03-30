@@ -1,0 +1,13 @@
+#games .card {
+    height: 400px;
+}
+
+#games .card-header {
+    height: 80%;
+    padding: 0;
+}
+
+#games img {
+    height: 100%;
+    object-fit: contain;
+}

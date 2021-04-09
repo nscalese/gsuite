@@ -11,3 +11,13 @@
     height: 100%;
     object-fit: contain;
 }
+
+#logo img {
+    max-width: 50%;
+    max-height: 50%;
+
+}
+
+.container {
+    max-width: none !important;
+}

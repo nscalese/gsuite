@@ -1,15 +1,42 @@
+<?php
+
+  require_once('functions.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head lang="en">
         <meta charset="utf-8">
         <title>GSuite - Track your games!</title>
         <script src="js/site.js"></script>
+        <script src="lib/jquery-3.6.0.js"></script>
         <script src="lib/bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="lib/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
     </head>
     <body class="d-flex flex-column">
       <main>
+        <!--Results Modal-->
+        <div id="results-modal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!--User Content Goes Here-->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h1>GSuite</h1>
         <section class="container" id=header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,8 +67,8 @@
                         </ul>
                       </li>
                     </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form id="search-form" class="d-flex">
+                      <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                   </div>
@@ -51,36 +78,9 @@
 
         <section class="container" id="games">
             <div class="row">
-                <div class="col">
-                    <div class="card bg-dark text-white text-center">
-                        <div class="card-header">
-                            <img class="card-img-top" src="Images/Games/Csgo.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Counter Strike: Global Offensive</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-dark text-white text-center">
-                        <div class="card-header">
-                            <img class="card-img-top" src="Images/Games/Minecraft_cover.png">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Minecraft</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card bg-dark text-white text-center">
-                        <div class="card-header">
-                            <img class="card-img-top" src="Images/Games/220px-Overwatch_cover_art.jpg">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Overwatch</h5>
-                        </div>
-                    </div>
-                </div>    
+                <?php
+                  echo(getGames());
+                ?>
             </div>
         </section>
       </main>

@@ -5,6 +5,18 @@ var resetList = false;
 var inProgress = false;
 
 window.onload = function(){
+	$(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+
     var searchForm = document.getElementById("search-form");
 
     searchForm.addEventListener("submit", function(e){

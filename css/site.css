@@ -1,5 +1,6 @@
 #games .card {
     height: 400px;
+    margin-bottom: 20px;
 }
 
 #games .card-header {
@@ -24,4 +25,8 @@
 
 html, body {
     height: 100%;
+}
+
+#no-games {
+    text-align: center;
 }

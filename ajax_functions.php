@@ -26,7 +26,7 @@
             if($games->num_rows > 0){
                 while($row = $games->fetch_assoc()){
                     $games_html.=sprintf("<div class=\"col-4\">
-                        <div class=\"card bg-dark text-white text-center\" data-appid=\"%d\" data-url=\"%s\">
+                        <div class=\"card bg-dark text-white text-center\" data-appid=\"%d\" data-url=\"%s\" data-description=\"%s\">
                             <div class=\"card-header\">
                                 <img class=\"card-img-top\" src=\"Images/Games/%s\">
                             </div>
@@ -34,7 +34,7 @@
                                 <h5 class=\"card-title\">%s</h5>
                             </div>
                         </div>
-                    </div>", $row["AppID"], $row["URL"], $row["Image"], $row["Name"]);
+                    </div>", $row["AppID"], $row["URL"], $row["Description"], $row["Image"], $row["Name"]);
                 }
             }
 

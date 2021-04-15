@@ -26,7 +26,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title"></h5>
               </div>
               <div class="modal-body">
                 <!--User Content Goes Here-->
@@ -38,8 +38,7 @@
           </div>
         </div>
 
-        <h1>GSuite</h1>
-        <section class="container" id=header>
+        <section class="container sticky-top" id="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <a id="logo" class="navbar-brand" href="#"><img class="gSuiteLogo" src="Images/Other/GS.JPG"></a>
@@ -85,19 +84,16 @@
                 </div>
               </div>
               <div class="col-2">
-                <a class="trigger_popup_fricc">Click here to show the popup</a>
-                <div class="hover_bkgr_fricc">
-                  <span class="helper"></span>
-                  <div>
-                    <div class="popupCloseButton">&times;</div>
-                    <p>Bug reporter<br/></p> //this should work for the bug report button
-                  </div>
-                </div>
-                <div class="sidenav">
-                  <a href="#">Comments</a>
-                  <a href="#">Recent Games</a>
-                  <a href="#">News</a>
-                  <a href="#">Bug Report</a>
+                <div class="sidebar">
+                  <a class="twitter-timeline" href="https://twitter.com/IGN?ref_src=twsrc%5Etfw">
+                    Tweets by IGN
+                  </a> 
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  
+                  <a class="d-block" id="comments" href="#">Comments</a>
+                  <a class="d-block" id="recent" href="#">Recent Games</a>
+                  <a class="d-block" id="news" href="#">News</a>
+                  <a class="d-block" id="bug-report" href="#">Bug Report</a>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 var search = ""; //Search variable
-var gameIteration = 0; //Current game iteration (pagination)
+var gameIteration = 1; //Current game iteration (pagination)
 var inProgress = false; //Whether or not there's an update game list in progress
 
 var globalAchievements = null; //Global achievements for a steam game
@@ -24,26 +24,16 @@ window.onload = function(){
 
         gameIteration = 0;
 
+        grid.masonry('remove', $(grid).find('.card'));
+
+        grid.empty();
+
         updateGameList();
     });
-
-    $(".trigger_popup_fricc").click(function(){
-        $('.hover_bkgr_fricc').show();
-     });
-     
-     $('.hover_bkgr_fricc').click(function(){
-         $('.hover_bkgr_fricc').hide();
-     });
-     
-     $('.popupCloseButton').click(function(){
-         $('.hover_bkgr_fricc').hide();
-     });
-
+    
     //When the window hits the bottom of the page, load new products
     $(window).scroll(function () {
         if (Math.round($(window).scrollTop() + 10) >= Math.round($(document).height()) - Math.round($(window).height())) {
-            console.log('here');
-            ++gameIteration;
             updateGameList();
         }
     });
@@ -148,7 +138,7 @@ function updateGameModal(card){
 }
 
 function updateGameList(){
-    if(!inProgress){
+    if(!inProgress && $('#no-games').length == 0){
         inProgress = true;
 
         $.ajax({
@@ -157,25 +147,27 @@ function updateGameList(){
             dataType: 'json',
             data: {search: search, game_iteration: gameIteration},    
             success: function (result) {
+                console.log(gameIteration);
+                console.log(search);
+                console.log(result);
                 var games = result.games;
-
 
                 var html = "";
 
                 //If there are no more games, set the html to be appended to a no games indicator. Otherwise, append the games html returned by the function
                 html = (games == null || games.trim() == "") ? '<h3 id="no-games">There are no more games to load.</h3>' : games;
 
-                if($('#no-games').length == 0){
-                    //If it's the first iteration, we reset the entries in the row
-                    if(gameIteration == 0)
-                        grid.empty();
+                html = $(html);
 
-                    html = $(html);
+                //Append the html to the games row
+                grid.append(html)
+                .masonry('appended', html);
 
-                    //Append the html to the games row
-                    grid.append(html)
-                    .masonry('appended', html);
-                }
+                setTimeout(function(){
+                    grid.masonry();
+                }, 1000)
+
+                gameIteration++;
 
                 inProgress = false;
             }

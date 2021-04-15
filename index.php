@@ -14,10 +14,10 @@
         <script src="js/site.js"></script>
         <script src="lib/jquery-3.6.0.js"></script>
         <script src="lib/bootstrap-5.0.0-beta3-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
         <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="lib/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  
     </head>
     <body class="d-flex flex-column">
       <main>
@@ -27,15 +27,12 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
               <div class="modal-body">
                 <!--User Content Goes Here-->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -53,7 +50,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Log in/Registrer</a>
+                        <a class="nav-link" href="#">Log in/Register</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Friends</a>
@@ -78,29 +75,33 @@
               </nav>
         </section>
 
-        <section class="container" id="games">
+        <section class="container">
             <div class="row">
-                <?php
-                  echo(getGames());
-                ?>
+              <div class="col-10" id="games">
+                <div class="row">
+                  <?php
+                    echo(getGames());
+                  ?>
+                </div>
+              </div>
+              <div class="col-2">
+                <a class="trigger_popup_fricc">Click here to show the popup</a>
+                <div class="hover_bkgr_fricc">
+                  <span class="helper"></span>
+                  <div>
+                    <div class="popupCloseButton">&times;</div>
+                    <p>Bug reporter<br/></p> //this should work for the bug report button
+                  </div>
+                </div>
+                <div class="sidenav">
+                  <a href="#">Comments</a>
+                  <a href="#">Recent Games</a>
+                  <a href="#">News</a>
+                  <a href="#">Bug Report</a>
+                </div>
+              </div>
             </div>
-        </section>
-
-        <a class="trigger_popup_fricc">Click here to show the popup</a>
-        <div class="hover_bkgr_fricc">
-        <span class="helper"></span>
-        <div>
-        <div class="popupCloseButton">&times;</div>
-        <p>Bug reporter<br/></p> //this should work for the bug report button
-        </div>
-        </div>
-
-        <div class="sidenav">
-          <a href="#">Comments</a>
-          <a href="#">Recent Games</a>
-          <a href="#">News</a>
-          <a href="#">Bug Report</a>
-        </div>
+        </section>        
       </main>
       <footer class="footer mt-auto py-3">
         <hr></hr>

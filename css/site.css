@@ -1,16 +1,10 @@
 #games .card {
-    height: 400px;
     margin-bottom: 20px;
 }
 
 #games .card-header {
     height: 80%;
     padding: 0;
-}
-
-#games img {
-    height: 100%;
-    object-fit: contain;
 }
 
 #logo img {
@@ -23,112 +17,18 @@
     max-width: none !important;
 }
 
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
-}
-
-.sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0; 
-    left: 0;
-    background-color: #111; 
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
- 
-  .main {
-    margin-left: 250px; 
-    padding: 0px 50px;
-  }
-  
-  /* Popup box BEGIN */
-.hover_bkgr_fricc{
-    background:rgba(0,0,0,.4);
-    cursor:pointer;
-    display:none;
-    height:100%;
-    position:fixed;
-    text-align:center;
-    top:0;
-    width:100%;
-    z-index:10000;
-}
-.hover_bkgr_fricc .helper{
-    display:inline-block;
-    height:100%;
-    vertical-align:middle;
-}
-.hover_bkgr_fricc > div {
-    background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
-    display: inline-block;
-    height: auto;
-    max-width: 551px;
-    min-height: 100px;
-    vertical-align: middle;
-    width: 60%;
-    position: relative;
-    border-radius: 8px;
-    padding: 15px 5%;
-}
-.popupCloseButton {
-    background-color: #fff;
-    border: 3px solid #999;
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-block;
-    font-family: arial;
-    font-weight: bold;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 25px;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-.popupCloseButton:hover {
-    background-color: #ccc;
-}
-.trigger_popup_fricc {
-    cursor: pointer;
-    font-size: 20px;
-    margin: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
-/* Popup box BEGIN */
-
 html, body {
     height: 100%;
 }
 
 #no-games {
     text-align: center;
+}
+
+.card-img-top {
+    cursor: pointer;
+}
+
+#steam-accordion {
+    margin-top: 20px;
 }
